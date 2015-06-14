@@ -8,20 +8,34 @@ output:
 ---
 
 ## Project Description
-Short description of the project
+The goal of the project is to create a tidy dataset from a collection of sensor
+data that contains on the means and standard deviation observations.
 
 ##Study design and data processing
 
 ###Collection of the raw data
-Description of how the data was collected.
+The data was downloaded from:
+[https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip]()  
+
+A full description is available at the site where the data was obtained: 
+[http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones]()
 
 ###Notes on the original (raw) data 
-Some additional notes (if avaialble, otherwise you can leave this section out).
+The original data is split into a test and train partition.
 
 ##Creating the tidy datafile
 
 ###Guide to create the tidy data file
-Description on how to create the tidy data file (1. download the data, ...)/
+1. download the data
+2. unzip the data
+3. import data into R
+4. merge labels with y record
+5. create column names
+6. determine which rows are means or standard deviation rows
+7. combine x, y, and subject data
+8. add Partition Group column for test or train data
+9. combine test and train data into a single data frame
+
 
 ###Cleaning of the data
 Short, high-level description of what the cleaning script does. [link to the readme document that describes the code in greater detail]()
