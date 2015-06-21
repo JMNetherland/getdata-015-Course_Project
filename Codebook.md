@@ -7,63 +7,111 @@ output:
     keep_md: yes
 ---
 
-## Project Description
-The goal of the project is to create a tidy dataset from a collection of sensor
-data that contains on the means and standard deviation observations.
+##Description of the variables in the data_means.txt file
+data.frame:     2640 obs. of  4 variables:
 
-##Study design and data processing
+        Subject : int  1 1 1 1 1 1 1 1 1 1 ...
 
-###Collection of the raw data
-The data was downloaded from:
-[https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip]()  
+        Activity: chr  "WALKING" "WALKING" "WALKING" "WALKING" ...
 
-A full description is available at the site where the data was obtained: 
-[http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones]()
+        Feature : Factor w/ 66 levels "tBodyAcc-mean()-X",..: 1 2 3 4 5 6 7 8 9 10 ...
 
-###Notes on the original (raw) data 
-The original data is split into a test and train partition.
+        Mean    : num  0.2657 -0.0183 -0.1078 -0.5458 -0.3677 ...
 
-##Creating the tidy datafile
+###Subject
+This variable is used to identify the subject
 
-###Guide to create the tidy data file
-1. download the data
-2. unzip the data
-3. import data into R
-4. merge labels with y record
-5. create column names
-6. determine which rows are means or standard deviation rows
-7. combine x, y, and subject data
-8. add Partition Group column for test or train data
-9. combine test and train data into a single data frame
+ - The variable is int
+ - Ranges from 1 to 30 for the 30 test subjects
+ 
+###Activity
+This variable is used to identify the Activity taking place at time of measurement
 
+ - They are character strings
+ - There are 6 different Activities
+        
+        1. WALKING
+        2. WALKING_UPSTAIRS
+        3. WALKING_DOWNSTAIRS
+        4. SITTING
+        5. STANDING
+        6. LAYING
+        
+###Feature
+This variable is used to describe the feature measurement
 
-###Cleaning of the data
-Short, high-level description of what the cleaning script does. [link to the readme document that describes the code in greater detail]()
+ - The variable is factor
+ - There are 66 different Features all dealing with a Mean or Standard Deviation Measurement
+        
+        1. tBodyAcc-mean()-X          
+        2. tBodyAcc-mean()-Y          
+        3. tBodyAcc-mean()-Z          
+        4. tBodyAcc-std()-X          
+        5. tBodyAcc-std()-Y           
+        6. tBodyAcc-std()-Z           
+        7. tGravityAcc-mean()-X       
+        8. tGravityAcc-mean()-Y      
+        9. tGravityAcc-mean()-Z       
+        10. tGravityAcc-std()-X        
+        11. tGravityAcc-std()-Y        
+        12. tGravityAcc-std()-Z       
+        13. tBodyAccJerk-mean()-X      
+        14. tBodyAccJerk-mean()-Y      
+        15. tBodyAccJerk-mean()-Z      
+        16. tBodyAccJerk-std()-X      
+        17. tBodyAccJerk-std()-Y       
+        18. tBodyAccJerk-std()-Z       
+        19. tBodyGyro-mean()-X         
+        20. tBodyGyro-mean()-Y        
+        21. tBodyGyro-mean()-Z         
+        22. tBodyGyro-std()-X          
+        23. tBodyGyro-std()-Y          
+        24. tBodyGyro-std()-Z         
+        25. tBodyGyroJerk-mean()-X     
+        26. tBodyGyroJerk-mean()-Y     
+        27. tBodyGyroJerk-mean()-Z     
+        28. tBodyGyroJerk-std()-X     
+        29. tBodyGyroJerk-std()-Y      
+        30. tBodyGyroJerk-std()-Z      
+        31. tBodyAccMag-mean()         
+        32. tBodyAccMag-std()         
+        33. tGravityAccMag-mean()      
+        34. tGravityAccMag-std()       
+        35. tBodyAccJerkMag-mean()     
+        36. tBodyAccJerkMag-std()     
+        37. tBodyGyroMag-mean()        
+        38. tBodyGyroMag-std()         
+        39. tBodyGyroJerkMag-mean()    
+        40. tBodyGyroJerkMag-std()    
+        41. fBodyAcc-mean()-X          
+        42. fBodyAcc-mean()-Y          
+        43. fBodyAcc-mean()-Z          
+        44. fBodyAcc-std()-X          
+        45. fBodyAcc-std()-Y           
+        46. fBodyAcc-std()-Z           
+        47. fBodyAccJerk-mean()-X      
+        48. fBodyAccJerk-mean()-Y     
+        49. fBodyAccJerk-mean()-Z      
+        50. fBodyAccJerk-std()-X       
+        51. fBodyAccJerk-std()-Y       
+        52. fBodyAccJerk-std()-Z      
+        53. fBodyGyro-mean()-X         
+        54. fBodyGyro-mean()-Y         
+        55. fBodyGyro-mean()-Z         
+        56. fBodyGyro-std()-X         
+        57. fBodyGyro-std()-Y          
+        58. fBodyGyro-std()-Z          
+        59. fBodyAccMag-mean()         
+        60. fBodyAccMag-std()         
+        61. fBodyBodyAccJerkMag-mean() 
+        62. fBodyBodyAccJerkMag-std()  
+        63. fBodyBodyGyroMag-mean()    
+        64. fBodyBodyGyroMag-std()    
+        65. fBodyBodyGyroJerkMag-mean()
+        66. fBodyBodyGyroJerkMag-std()
+        
 
-##Description of the variables in the tiny_data.txt file
-General description of the file including:
- - Dimensions of the dataset
- - Summary of the data
- - Variables present in the dataset
+###Mean
+This variable is a calculated field based giving the mean for each Subject, Activity, and Feature group.
 
-(you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
-
-###Variable 1 (repeat this section for all variables in the dataset)
-Short description of what the variable describes.
-
-Some information on the variable including:
- - Class of the variable
- - Unique values/levels of the variable
- - Unit of measurement (if no unit of measurement list this as well)
- - In case names follow some schema, describe how entries were constructed (for example time-body-gyroscope-z has 4 levels of descriptors. Describe these 4 levels). 
-
-(you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
-
-####Notes on variable 1:
-If available, some additional notes on the variable not covered elsewehere. If no notes are present leave this section out.
-
-##Sources
-Sources you used if any, otherise leave out.
-
-##Annex
-If you used any code in the codebook that had the echo=FALSE attribute post this here (make sure you set the results parameter to 'hide' as you do not want the results to show again)
+ - The variable is numeric
